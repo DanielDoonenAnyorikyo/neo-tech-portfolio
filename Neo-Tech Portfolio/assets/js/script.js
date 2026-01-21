@@ -158,8 +158,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-}
-
 // WhatsApp form submission
 const contactForm = document.querySelector("[data-form]");
 
