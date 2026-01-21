@@ -157,3 +157,28 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+}
+
+// WhatsApp form submission
+const contactForm = document.querySelector("[data-form]");
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault(); // stop normal form submit
+
+  const fullName = contactForm.querySelector('input[name="fullname"]').value;
+  const email = contactForm.querySelector('input[name="email"]').value;
+  const message = contactForm.querySelector('textarea[name="message"]').value;
+
+  const phoneNumber = "2348145069992"; // <-- PUT YOUR NUMBER HERE (no +)
+
+  const whatsappMessage =
+    `Hello, I have a new contact message:%0A%0A` +
+    `👤 Name: ${fullName}%0A` +
+    `📧 Email: ${email}%0A` +
+    `💬 Message: ${message}`;
+
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+  window.open(whatsappURL, "_blank");
+});
